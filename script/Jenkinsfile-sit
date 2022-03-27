@@ -14,7 +14,7 @@ node{
 	def basePath='/home/cloud'
 
 	stage('Checkout'){
-		checkout([$class: 'GitSCM', branches: [[name: '*/sit']],  doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Zhao-Peng-Hui/demo.git']]])
+		checkout([$class: 'GitSCM', branches: [[name: '*/sit']],  doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'f79b37da-7b94-42c8-95f1-3804ce219aeb', url: 'https://github.com/Zhao-Peng-Hui/demo.git']]])
 	}
 
 	stage('Archive Artefact'){
