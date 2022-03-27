@@ -1,5 +1,5 @@
 
-node("master"){
+node("Built-In Node"){
 	step([$class: 'WsCleanup'])
 
 	// 工程名
