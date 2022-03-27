@@ -1,9 +1,9 @@
 
-node("Built-In Node"){
+node(){
 	step([$class: 'WsCleanup'])
 
 	// 工程名
-	def projectName='crl-report-data'
+	def projectName='demo'
 	// 工程部署目标服务器ip
 	def deployIp='10.255.11.12'
 	// 工程启动端口
