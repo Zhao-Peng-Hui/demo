@@ -22,7 +22,7 @@ case $env in
 		JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=../dump"
 		JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=$env -Dserver.port=$port"
 		JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Shanghai"
-		nohup java -jar $JAVA_OPTS ../$projectName/target/$projectName*.jar > ../$projectName.log &
+		nohup java -jar $JAVA_OPTS ../target/$projectName*.jar > ../$projectName.log &
 	;;
 	test)
 		JAVA_OPTS="-Xms1024m -Xmx1024m -Xss256m -Xmn256m -XX:MetaspaceSize=512m -XX:MaxMetaspaceSize=512m -XX:SurvivorRatio=8"
@@ -30,7 +30,7 @@ case $env in
 		JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=../dump"
 		JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=$env -Dserver.port=$port"
 		JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Shanghai"
-		nohup java -jar $JAVA_OPTS ../$projectName/target/$projectName*.jar > ../$projectName.log &
+		nohup java -jar $JAVA_OPTS ../target/$projectName*.jar > ../$projectName.log &
 	;;
 	dev | local)
 		JAVA_OPTS="-Xms1024m -Xmx1024m -Xss256m -Xmn256m -XX:MetaspaceSize=256m -XX:MaxMetaspaceSize=256m -XX:SurvivorRatio=8"
@@ -38,21 +38,21 @@ case $env in
 		JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=../dump"
 		JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=$env -Dserver.port=$port"
 		JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Shanghai"
-		nohup java -jar $JAVA_OPTS ../$projectName/target/$projectName*.jar > ../$projectName.log &
+		nohup java -jar $JAVA_OPTS ../target/$projectName*.jar > ../$projectName.log &
 	;;
 	uat)
 		JAVA_OPTS="-Xms1024m -Xmx1024m -Xss256m -Xmn256m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -XX:SurvivorRatio=8"
 		JAVA_OPTS="$JAVA_OPTS -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/home/logs/$projectName-$env/gc.log"
 		JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/logs/$projectName-$env/dump"
 		JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=$env -Dserver.port=$port"
-		nohup java -jar $JAVA_OPTS ../$projectName/target/$projectName*.jar > ../$projectName.log &
+		nohup java -jar $JAVA_OPTS ../target/$projectName*.jar > ../$projectName.log &
 	;;
 	prod)
 		JAVA_OPTS="-Xms4096m -Xmx4096m -Xss256m -Xmn256m -XX:MetaspaceSize=256m -XX:MaxMetaspaceSize=256m -XX:SurvivorRatio=8"
 		JAVA_OPTS="$JAVA_OPTS -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:/home/logs/$projectName-$env/gc.log"
 		JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/logs/$projectName-$env/dump"
 		JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active=$env -Dserver.port=$port"
-		nohup java -jar $JAVA_OPTS ../$projectName/target/$projectName*.jar > ../$projectName.log &
+		nohup java -jar $JAVA_OPTS ../target/$projectName*.jar > ../$projectName.log &
 	;;
 	*)
 		echo "No this env:$env."
