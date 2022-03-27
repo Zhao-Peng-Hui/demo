@@ -4,7 +4,7 @@ env=$1
 port=$2
 projectName=$3
 
-health_url="http://127.0.0.1:$port/data/actuator/health"
+health_url="http://127.0.0.1:$port/actuator/health"
 
 echo "env = "$env
 
